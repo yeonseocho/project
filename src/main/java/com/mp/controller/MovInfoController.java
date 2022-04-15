@@ -21,6 +21,7 @@ public class MovInfoController {
    @Autowired
 	private InfoSVC infosvc;
    
+   
     @ApiOperation(value = "일별 박스오피스 조회", httpMethod = "GET", notes = "4월 7일, 일별 박스오피스 조회 내역")
     @GetMapping("/moviess")
     public String searchDailyBoxOfficeList(Model model) {

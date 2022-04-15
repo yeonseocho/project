@@ -18,7 +18,7 @@
 	tr:last-child>td {border-bottom:none; }
 	tr:nth-child(3) > td { height:70px; overflow: auto;}
 	a { text-decoration: none; color:blue; }
-	a.link_del { border:1px solid red; color:red; font-size: x-small;}
+	a.link_del { border:1px solid red; color:red; font-size: x-small;} 
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
