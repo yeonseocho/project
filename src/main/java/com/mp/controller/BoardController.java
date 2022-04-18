@@ -1,18 +1,11 @@
 package com.mp.controller;
 
-import java.io.File;
-
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -28,8 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttribute;
-import org.springframework.web.bind.annotation.SessionAttributes;
+
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mp.svc.BoardSVC;
@@ -110,18 +102,18 @@ public class BoardController {
 	public String detail(@RequestParam int num, Model model) {
 		BoardVO board = svc.detail(num);
 		model.addAttribute("board", board);
-		return "board/detail"; 
+		return "board/detail";
 	}
-	
+
 	@PostMapping("/file/delete")
 	@ResponseBody
-	public Map<String, Boolean>deleteFileInfo(@RequestParam int num) {
-		boolean deleted = svc.deleteFileInfo(num, resourceLoader); //resuourceLoader: 파일의 절대 경로 받을 때 필요한 코드.
+	public Map<String, Boolean> deleteFileInfo(@RequestParam int num) {
+		boolean deleted = svc.deleteFileInfo(num, resourceLoader); // resuourceLoader: 파일의 절대 경로 받을 때 필요한 코드.
 		Map<String, Boolean> map = new HashMap<>();
 		map.put("deleted", deleted);
 		return map;
 	}
-	
+
 	@PostMapping("/idcheck/{filename}")
 	@ResponseBody
 	public Map<String, Boolean> idcheck(@RequestParam String num) {
@@ -130,33 +122,3 @@ public class BoardController {
 		map.put("idcheck", idcheck);
 		return map;
 	}
-	/*//파일 삭제 
-    File f = new File("C:/test/sample.jpg");
-    
-    System.out.println("존재여부: " + f.exists());
-    
-    if( f.exists()) 
-    {
-       boolean deleted = f.delete();
-       if(deleted) {
-          System.out.println("파일삭제 성공");
-       }else {
-          System.out.println("파일삭제 실패");
-       }
-    }  */
-    
- /*   파일명 중복 방지
-    String filename="a.txt";
-    String ext=filename.split("\\.")[1];
-    String nextFilename=Sysen.nanoTime()+"."+ext;
-    System out println(newFilename);
-    */
-}
-
-//테스트
-/*
- * @GetMapping("/add") public String add() { BoardVO board = new BoardVO();
- * board.setTitle("게시판 테스트2"); board.setAuthor("Smith");
- * board.setContents("자동 증가 필드 값 추출하기"); boolean added = svc.addBoard(board);
- * int num = board.getNum(); return "added = " + added + ", AI = " + num; }
- */

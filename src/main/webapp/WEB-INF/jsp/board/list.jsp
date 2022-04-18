@@ -7,7 +7,6 @@
 <title>리뷰 목록보기</title>
 <style>
 #btt { display: block; margin: 0 auto; width: fit-content;}
-
 </style>
 
 </head>

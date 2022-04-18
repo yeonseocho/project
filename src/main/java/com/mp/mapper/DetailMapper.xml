@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mp.mapper.ReviewMapper">
+
+    <insert id="addReview" 
+    	parameterType="com.mp.vo.ReviewVO"
+    	useGeneratedKeys="true" keyProperty="num">
+    	INSERT INTO review VALUES(null, #{title}, #{director}, #{actor}, #{age}, #{story})
+    </insert>
+    
+	<select id="detail"
+		resultType="com.mp.vo.ReviewVO" 
+		parameterType="String">
+	SELECT * FROM review WHERE 
+
+</select>
+</mapper>

@@ -2,7 +2,7 @@ package com.mp.vo;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 
 public class BoardVO {
 	private int num;
@@ -21,7 +21,7 @@ public class BoardVO {
 
 	@Override
 	public String toString() {
-		return num + " " + title + " " + author + " " + contents + " " + attach;
+		return num + " " + title + " " + author + " " + contents + " " + bdate + " "+ attach;
 	}
 
 	@Override

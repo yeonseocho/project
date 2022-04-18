@@ -69,7 +69,6 @@
             alert('에러:'+err);
          }
       });
-
    } */
 </script>
 </head>

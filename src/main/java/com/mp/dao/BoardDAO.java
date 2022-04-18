@@ -14,40 +14,32 @@ public class BoardDAO {
 
 	@Autowired
 	private BoardMapper boardMapper;
-	
-	public boolean addBoard(BoardVO board)
-	{
-		return boardMapper.addBoard(board)>0;
-	
-		
+
+	public boolean addBoard(BoardVO board) {
+		return boardMapper.addBoard(board) > 0;
+
 	}
-	public boolean addFileInfo(Map<String, Object>map)
-	{
-		return boardMapper.addFileInfo(map)>0;
-	
-		
+
+	public boolean addFileInfo(Map<String, Object> map) {
+		return boardMapper.addFileInfo(map) > 0;
+
 	}
-	public List<Map<String, Object>>boardList(){
+
+	public List<Map<String, Object>> boardList() {
 		return boardMapper.boardList();
 	}
-	public List<Map<String, Object>>detail(int num){
+
+	public List<Map<String, Object>> detail(int num) {
 		return boardMapper.getDetail(num);
-		
-	} 
+
+	}
+
 	public String getFilename(int num) {
 		return boardMapper.getFilename(num);
 	}
-	
-	public boolean deleteFileInfo(int num) {
-		return boardMapper.deleteFileInfo(num)>0;
-	}
-	
-	
-	
 
-	
-		
-	
-	
-	
+	public boolean deleteFileInfo(int num) {
+		return boardMapper.deleteFileInfo(num) > 0;
+	}
+
 }

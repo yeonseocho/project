@@ -17,50 +17,21 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mp.dao.BoardDAO;
+import com.mp.dao.DetailDAO;
 import com.mp.vo.AttachVO;
 import com.mp.vo.BoardVO;
+import com.mp.vo.DetailVO;
 
 @Service
-public class BoardSVC {
+public class DetailSVC {
 	@Autowired
-	private BoardDAO dao;
+	private DetailDAO dao;
 
-	public boolean addBoard(BoardVO board) {
-		return dao.addBoard(board);
+	public boolean addDetail(DetailVO detail) {
+		return dao.addDetail(detail);
 	}
 
-	public boolean addBoard(HttpServletRequest request, BoardVO board, MultipartFile[] mfiles) {
-		boolean saved = addBoard(board); // 글 저장
-		int board_num = board.getNum(); // 글 저장시 자동증가 필드
-		if (!saved) {
-			System.out.println("글 저장 실패");
-			return false;
-		}
-
-		ServletContext context = request.getServletContext();
-		String savePath = context.getRealPath("/WEB-INF/upload");
-		int fileCnt = mfiles.length;
-		int saveCnt = 0;
-		try {
-			for (int i = 0; i < mfiles.length; i++) {
-				String filename = mfiles[i].getOriginalFilename();
-				mfiles[i].transferTo(new File(savePath + "/" + filename)); // 서버측 디스크
-				Map<String, Object> map = new HashMap<>();
-				map.put("board_num", board_num);
-				map.put("filename", filename);
-				map.put("filesize", mfiles[i].getSize());
-				boolean fSaved = dao.addFileInfo(map); // attach 테이블에 파일정보 저장
-				if (fSaved)
-					saveCnt++;
-			}
-			return fileCnt == saveCnt ? true : false;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return false;
-	}
-
+	
 	public List<BoardVO> boardList() {
 		List<Map<String, Object>> list = dao.boardList();
 		List<BoardVO> list2 = new ArrayList<>();
