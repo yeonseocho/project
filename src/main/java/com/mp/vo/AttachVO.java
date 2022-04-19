@@ -2,16 +2,16 @@ package com.mp.vo;
 
 public class AttachVO 
 {
-	private int num;
+	private int att_num;
 	private int board_num;
 	private String filename;
 	private long filesize;
 	
 	public int getNum() {
-		return num;
+		return att_num;
 	}
 	public void setNum(int num) {
-		this.num = num;
+		this.att_num = num;
 	}
 	public int getBoard_num() {
 		return board_num;

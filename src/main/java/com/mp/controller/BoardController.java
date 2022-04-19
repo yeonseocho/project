@@ -121,4 +121,6 @@ public class BoardController {
 		Map<String, Boolean> map = new HashMap<>();
 		map.put("idcheck", idcheck);
 		return map;
+
 	}
+}

@@ -2,18 +2,37 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.mp.mapper.ReviewMapper">
+<mapper namespace="com.mp.mapper.DetailMapper">
 
-    <insert id="addReview" 
-    	parameterType="com.mp.vo.ReviewVO"
+    <insert id="addDetail" 
+    	parameterType="com.mp.vo.DetailVO"
     	useGeneratedKeys="true" keyProperty="num">
-    	INSERT INTO review VALUES(null, #{title}, #{director}, #{actor}, #{age}, #{story})
+    	INSERT INTO detail VALUES(null, #{title}, #{director}, #{actor},#{movietime}, #{grade}, #{contents})
     </insert>
     
-	<select id="detail"
-		resultType="com.mp.vo.ReviewVO" 
-		parameterType="String">
-	SELECT * FROM review WHERE 
-
-</select>
+    <insert id="addFileInfo"
+    	parameterType="map">
+    	INSERT INTO dattach VALUES(null, #{detail_num}, #{filename}, #{filesize})
+    </insert>
+    
+    <select id="detailList"
+    	resultType="map">
+    	SELECT * FROM detail d LEFT OUTER JOIN dattach da
+    	ON d.num=da.detail_num
+    </select>
+    <select id="getDetail"
+    resultType="map"
+    parameterType="Integer">
+    SELECT * FROM detail d LEFT OUTER JOIN dattach da ON d.num=da.detail_num WHERE d.num=#{num}
+    </select>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+    <select id="getFilename" parameterType="Integer" resultType="String">
+    SELECT filename FROM dattach WHERE att_num=#{num}
+    </select>
+    
+    <delete id="deleteFileInfo" parameterType="Integer">
+    DELETE FROM dattach WHERE att_num=#{num};
+    </delete>
+    
+    
 </mapper>

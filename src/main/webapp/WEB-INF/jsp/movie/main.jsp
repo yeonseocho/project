@@ -20,8 +20,64 @@
 <style>
 
  div > h2 {text-align:center;}
-</style>
+ aside{
+ 
+ border-style: dashed;
+ color:#339999;
+ width:470px;
+ height:416px;
+ float:right;
+ }
+ aside>section>h2 {text-align:center;}
+#boxoffice {width:470px;height:416px;}
 
+</style>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+            $(function() {
+                let y = new Date();
+                y.setDate(y.getDate()-1);
+                let str = y.getFullYear() + "-"
+                + ("0" + (y.getMonth() + 1)).slice(-2) + "-"
+                + ("0" + y.getDate()).slice(-2);
+                $("#date").attr("max",str);
+
+                // 버튼의 클릭 이벤트
+                $("#mybtn").click(function() {
+                    let d = $("#date").val();//YYYY-MM-dd
+                    const regex = /-/g;
+                    let d_str = d.replace(regex,"")//YYYYMMdd 
+
+                    let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt="+d_str
+					
+                     $.getJSON(url, function(data) {
+                         let movieList = data.boxOfficeResult.dailyBoxOfficeList;
+                         $("#boxoffice").empty();
+                         $("#boxoffice").append(d+" 박스 오피스 순위<br>");
+                         for(let i in movieList){
+                             $("#boxoffice").append("<div class='movie' id="+movieList[i].movieCd+">"+(parseInt(i)+1)+". <a href='/moviein/detail'>"+movieList[i].movieNm+"</a> / "+movieList[i].audiAcc+"명</div><hr>");
+                             //console.log(movieList[i].movieCd);
+                         }
+                        });
+                });//button click
+                //영화 제목 클릭시 영화 정보 출력
+                $("#boxoffice").on("click",".movie", function(){
+                    let d = $(this);
+                    let movieCd = d.attr("id");
+                    let url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json?key=69572d11a22a27ad291b039c21495eb9&movieCd="+movieCd;
+                    $.getJSON(url,function(res){
+                        let movie = res.movieInfoResult.movieInfo;
+                        d.append("<hr>");
+                        d.append("개봉일 : "+movie.openDt+"<br>");
+                        d.append("감독 : "+movie.directors[0].peopleNm+"<br>");
+                        d.append("주연 : "+movie.actors[0].peopleNm+", "+movie.actors[1].peopleNm+", "+movie.actors[2].peopleNm);
+                        d.append("<hr>");
+                    })
+                })
+            });//ready
+        </script>
+        
+        
 <title>MovieReview</title>
 
 </head>
@@ -37,7 +93,7 @@
         <ul class="navbar-nav">
 
             <li class="nav-item">
-                <a class="nav-link" href="/moviein/moviess">영화</a>
+                <a class="nav-link" href="/moviein/moviess">박스 오피스 순위</a>
             </li>
 
             <li class="nav-item">
@@ -56,9 +112,26 @@
 <div id="carouselExampleControls" class="carousel slide carousel-img" data-ride="carousel" >
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="/img/toymain.png" class="d-block main-img" alt="..." style="width: 100%">
+            <img src="/img/toymain.png" class="d-block main-img" alt="..." style="width: 73%">
 
         </div>
+<aside>
+<section>
+<h2>오늘의 영화 랭킹</h2>
+<div id="boxoffice">
+    박스 오피스 순위<br>
+</div>
+
+
+</section>
+</aside>
+   <%-- <div class="carousel-item">
+        <img src="/img/aven.JPG" class="d-block w-10" alt="..." style="width: 100%"> 
+    </div>
+    <div class="carousel-item">
+        <img src="..." class="d-block w-10" alt="...">
+    </div>
+
         </div>
             <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -67,8 +140,9 @@
     <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
-    </button>
+    </button>--%> 
 </div>
+
 
 <div style="margin-bottom: 100px;"></div>
 
@@ -77,7 +151,7 @@
     	<div class="row">
         <div class="col-1" style="max-width: 3.333333%;"></div>
         <div class="card" style="width: 15rem;">
-        	<a href="/detail/{{id}}">  
+        	<a href="/de/detail?num=2">  
                 <img src="/img/frozen.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="100%" height="340px">
 			    <div class="card-body">
      
@@ -89,7 +163,7 @@
    
    <div class="col-1" style="max-width: 3.333333%;"></div>
      	<div class="card" style="width: 15rem;">
-                <a href="/detail/{{id}}">
+                <a href="/de/detail?num=8">
                 <img src="/img/once.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="100%" height="340px">
 				<div class="card-body">
 				
@@ -105,7 +179,7 @@
 
 		<div class="col-1" style="max-width: 3.333333%;"></div>
         	<div class="card" style="width: 15rem;">
-                <a href="/detail/{{id}}">
+                <a href="/de/detail?num=9">
                 <img src="/img/parasite.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="100%" height="340px">
                 <div class="card-body">
                 
