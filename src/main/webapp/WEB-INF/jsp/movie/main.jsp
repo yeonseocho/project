@@ -196,11 +196,11 @@
 
 		<div class="col-1" style="max-width: 3.333333%;"></div>
         	<div class="card" style="width: 15rem;">
-                <a href="/detail/{{id}}">
+                <a href="/de/detail?num=10">
                 <img src="/img/spider.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="100%" height="340px">
 				<div class="card-body">
 				
-                    <h2>스파이더맨</h2>
+                    <h2>스파이더맨 파 프럼 홈</h2>
 
    	 			</div>
     			</a>
@@ -209,7 +209,7 @@
 <div style="margin-bottom: 100px;"></div>
 		<div class="col-5"style="max-width: 3.44%;"></div>
        		<div class="card" style="width: 15rem;">
-                <a href="/detail/{{id}}">
+                <a href="/de/detail?num=12">
                 <img src="/img/ani.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="100%" height="340px">
                 <div class="card-body">
                     <h2>신비한 동물사전</h2>
@@ -221,7 +221,7 @@
 <div style="margin-bottom: 100px;"></div>
 		<div class="col-6" style="max-width: 3%;"></div>
         		<div class="card" style="width: 15rem;">
-                	<a href="/detail/{{id}}">
+                	<a href="/de/detail?num=13">
                 	<img src="/img/ani2.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="100%" height="340px">
 	  				<div class="card-body">
                 
@@ -235,7 +235,7 @@
 </div>
  <div class="col-7" style="max-width: 3.333333%;"></div>
           <div class="card" style="width: 15rem;">
-                <a href="/detail/{{id}}">
+                <a href="/de/detail?num=14">
                 <img src="/img/dune.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="100%" height="340px">
 
                 <div class="card-body">
@@ -248,11 +248,11 @@
 <div style="margin-bottom: 100px;"></div>
 <div class="col-1" style="max-width: 3.333333%;"></div>
           <div class="card" style="width: 15rem;">
-                <a href="/detail/{{id}}">
-                <img src="/img/frozen.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="100%" height="340px">
+                <a href="/de/detail?num=15 ">
+                <img src="/img/cruella.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="100%" height="340px">
 
                 <div class="card-body">
-                    <h2>겨울왕국</h2>
+                    <h2>cruella</h2>
 
     </div>
     </a>
