@@ -133,6 +133,10 @@ public class BoardSVC {
 		return board;
 
 	}
+public int deleted(BoardVO board) {
+		
+		return dao.deleted(board);
+	}
 
 	
 	public boolean deleteFileInfo(int num, ResourceLoader resourceLoader) {

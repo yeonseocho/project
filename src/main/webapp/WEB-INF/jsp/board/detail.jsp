@@ -23,54 +23,55 @@
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
-   function delete_file(num)
-   {
-      if(!confirm('정말로 삭제하시겠어요?')){
-         return;
-      }
-      var obj = {};
-      obj.num = num;
-      $.ajax({
-         url:'/bbs/file/delete',
-         method:'post',
-         cache:false,
-         data:obj,
-         dataType:'json',
-         success:function(res){
-            alert(res.deleted ? '삭제 성공':'삭제 실패');
-            if(res.deleted)location.href = '/bbs/list'
-         },
-         error:function(xhr,status,err){
-            alert('에러:'+err);
-         }
-      });
-   }
-/*   function del_board(num){
-      if(!confirm('현재 글을 삭제하시겠어요?')){
-         return;
-      }
-      
-      var obj={};
-      obj.cmd='delete';
-      obj.num=empno; 
-      
-      $.ajax({
-         url:'/bbs/detail',
-         method:'post',
-         cache:false,
-         data:obj,
-         dataType:'json',
-         success:function(res){
-            alert(res.deleted?'삭제 성공':'삭제 실패');
-            location.href='/jdbc/mem?cmd+list';
-            
-         },
-         error:function(xhr,status,err){
-            alert('에러:'+err);
-         }
-      });
-   } */
-</script>
+
+function delete_file(num)
+{
+	if(!confirm('정말로 삭제하시겠어요?')){
+		return;
+	}
+	var obj = {};
+	obj.num = num;
+	$.ajax({
+		url:'/bbs/file/delete',
+		method:'post',
+		cache:false,
+		data:obj,
+		dataType:'json',
+		success:function(res){
+			alert(res.deleted ? '삭제 성공':'삭제 실패');
+		},
+		error:function(xhr,status,err){
+			alert('에러:'+err);
+		}
+	});
+}
+
+   function del_board(num){
+		
+		if(!confirm('정말 삭제 하시겠습니까?')){
+	         return;
+	      }
+	      
+	      var obj = {};
+	      obj.num = num;
+	   
+	      
+	      $.ajax({
+	         url : '/bbs/delete',
+	         method : 'post',
+	         cache : false,
+	         data : obj,
+	         dataType : 'json',
+	         success : function(res){
+	            alert(res.deleted ? '삭제 성공' : '삭제 실패!');
+	            location.href = '/bbs/list';
+	         },
+	         error : function(xhr, status, err){
+	            alert('에러 : ' + err);
+	         }
+	      });
+	}
+	</script>
 </head>
 <body>
 <h3>영화리뷰보기</h3>

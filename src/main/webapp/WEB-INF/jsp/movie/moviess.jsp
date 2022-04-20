@@ -29,7 +29,7 @@
                          $("#boxoffice").empty();
                          $("#boxoffice").append(d+" 박스 오피스 순위<br>");
                          for(let i in movieList){
-                             $("#boxoffice").append("<div class='movie' id="+movieList[i].movieCd+">"+(parseInt(i)+1)+". <a href='/moviein/detail'>"+movieList[i].movieNm+"</a> / "+movieList[i].audiAcc+"명</div><hr>");
+                             $("#boxoffice").append("<div class='movie' id="+movieList[i].movieCd+">"+(parseInt(i)+1)+movieList[i].movieNm+"</a> / "+movieList[i].audiAcc+"명</div><hr>");
                              //console.log(movieList[i].movieCd);
                          }
                         });

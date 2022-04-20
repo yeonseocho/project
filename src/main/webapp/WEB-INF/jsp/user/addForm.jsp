@@ -14,6 +14,10 @@
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <title>회원가입</title>
+ <img src="/img/1.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="5%" height="100px";>
+ <img src="/img/2.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="5%" height="100px";>
+ 
+
 	<script>
 		 var idcheck = false; 
 		function addUser() {
@@ -86,17 +90,8 @@
 			<div><label for ="pwd">Password</label> <input type = "text" id="pwd" name = "pwd" value = ""> </div>
 			<div><label for ="name">Name</label> <input type = "text" id="name" name = "name" value = ""> </div>
 			<div><label for ="phone">Phone</label> <input type = "text" id="phone" name = "phone" value = ""> </div>
-			<div id="genre"><label>선호하는 장르를 모두 골라주세요.</label></div>
-			<div>
-	<input type="checkbox" name="hobby" value="game" checked>액션
-	<input type="checkbox" name="hobby"value="fishing">로맨스
-	<input type="checkbox" name="hobby"value="movie">범죄
-	<input type="checkbox" name="hobby"value="travel">SF
-	<input type="checkbox" name="hobby"value="travel">스릴러
-	<input type="checkbox" name="hobby"value="travel">뮤지컬
-	<input type="checkbox" name="hobby"value="travel">판타지
+			
 
-</div>
 			<div>
 				<button type = "submit">저장</button>
 				<button type = "reset">초기화</button>

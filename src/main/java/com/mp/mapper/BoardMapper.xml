@@ -34,5 +34,11 @@
     DELETE FROM attach WHERE att_num=#{num};
     </delete>
     
+     <delete id="deleted"
+    	parameterType="Integer">
+    	DELETE FROM board WHERE num=#{num}
+    </delete>
+    
+    
     
 </mapper>

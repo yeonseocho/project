@@ -104,7 +104,17 @@ public class BoardController {
 		model.addAttribute("board", board);
 		return "board/detail";
 	}
-
+	
+	@PostMapping("/delete")
+	@ResponseBody
+	public Map<String,Boolean> deleted(BoardVO board) {
+		Map<String,Boolean> map = new HashMap<>();
+		map.put("deleted", svc.deleted(board)>0);
+		return map;
+	}
+	
+	
+	
 	@PostMapping("/file/delete")
 	@ResponseBody
 	public Map<String, Boolean> deleteFileInfo(@RequestParam int num) {

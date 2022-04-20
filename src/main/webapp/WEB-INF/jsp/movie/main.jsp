@@ -32,6 +32,7 @@
 #boxoffice {width:470px;height:416px;}
 
 </style>
+<%-- 
 <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
             $(function() {
@@ -76,7 +77,7 @@
                 })
             });//ready
         </script>
-        
+        --%>
         
 <title>MovieReview</title>
 
@@ -112,11 +113,11 @@
 <div id="carouselExampleControls" class="carousel slide carousel-img" data-ride="carousel" >
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="/img/toymain.png" class="d-block main-img" alt="..." style="width: 73%">
+            <img src="/img/main3.png" class="d-block main-img" alt="..." style="width: 100%">
 
         </div>
-<aside>
-<section>
+<%--<aside>
+ <section>
 <h2>오늘의 영화 랭킹</h2>
 <div id="boxoffice">
     박스 오피스 순위<br>
@@ -125,6 +126,7 @@
 
 </section>
 </aside>
+--%>
    <%-- <div class="carousel-item">
         <img src="/img/aven.JPG" class="d-block w-10" alt="..." style="width: 100%"> 
     </div>
@@ -261,7 +263,7 @@
 <div style="margin-bottom: 100px;"></div>
      <div class="col-1" style="max-width: 3.333333%;"></div>
             <div class="card" style="width: 15rem;">
-                <a href="/detail/{{id}}">  
+                <a href="/de/detail?num=16">  
                 <img src="/img/batman.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="100%" height="340px">
                 <div class="card-body">
                 
@@ -273,11 +275,33 @@
             
 		<div class="col-1" style="max-width: 3.333333%;"></div>
         	<div class="card" style="width: 15rem;">
-            	<a href="/detail/{{id}}">
+            	<a href="/de/detail?num=17">
                 <img src="/img/secret.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="100%" height="340px">
                 <div class="card-body">
                 
                     <h2>말할 수 없는 비밀</h2>
+
+				</div>
+				</a>
+			</div>
+	<div class="col-1" style="max-width: 3.333333%;"></div>
+        	<div class="card" style="width: 15rem;">
+            	<a href="/de/detail?num=18">
+                <img src="/img/now.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="100%" height="340px">
+                <div class="card-body">
+                
+                    <h2>지금 만나러 갑니다</h2>
+
+				</div>
+				</a>
+			</div>
+	<div class="col-1" style="max-width: 3.333333%;"></div>
+        	<div class="card" style="width: 15rem;">
+            	<a href="/de/detail?num=19">
+                <img src="/img/chung.JPG" class="card-img-top card-img" name="poster" alt="imgUrl" width="100%" height="340px">
+                <div class="card-body">
+                
+                    <h2>중경삼림</h2>
 
 				</div>
 				</a>

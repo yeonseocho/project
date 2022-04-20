@@ -21,5 +21,5 @@ public interface BoardMapper {
 	String getFilename(int num);
 
 	int deleteFileInfo(int num);
-
+	int deleted(BoardVO board);
 }

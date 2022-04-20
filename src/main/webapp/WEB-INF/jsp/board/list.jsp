@@ -26,7 +26,7 @@
 
 </c:forEach>
 <p>
-<button type="button"><a href="/bbs/add">추가</a></button>
+<button type="button"><a href="/bbs/add">영화 리뷰 작성하기</a></button>
 </p>
 </div>
 </body>

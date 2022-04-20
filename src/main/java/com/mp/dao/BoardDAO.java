@@ -37,6 +37,9 @@ public class BoardDAO {
 	public String getFilename(int num) {
 		return boardMapper.getFilename(num);
 	}
+	public int deleted(BoardVO b) {
+	      return boardMapper.deleted(b);
+	}
 
 	public boolean deleteFileInfo(int num) {
 		return boardMapper.deleteFileInfo(num) > 0;
