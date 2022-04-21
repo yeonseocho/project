@@ -10,6 +10,8 @@
 	form {border:1px solid black; padding:10px; border-radius:3px; }
 	div:last-child { margin-top:1em; }
 	#btt { display: block; margin: 0 auto; width: fit-content;}
+	body{background-color: #FFE9F4;}
+	h3{}
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <title>로그인</title>
@@ -53,12 +55,13 @@
 		</div>
 		<div>
 			<button type = "submit">로그인</button>
-			<button type = "reset">취소</button>
+			<button type = "reset" onclick="location.href='/movie/main';">취소</button>
 		   <!-- get방식 -->
 		<button type="button" 
 		onclick="location.href='/mb/add';">회원이 아니세요?</button>
 		</div>
 	</form>
+	 <img src="/img/hair.png" class="card-img-top card-img" name="poster" alt="imgUrl" width="80%" height="300px">
 	</div>
 </body>
 </html>

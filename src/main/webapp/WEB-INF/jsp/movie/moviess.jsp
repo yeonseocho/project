@@ -5,9 +5,31 @@
 <head>
 <meta charset="UTF-8">
 <title>영화 정보 리스트</title>
+<style>
+#movie{border:1px solid red; color:red; font-size: x-small;}
+body{width: 70%;
+    display: inline-block;
+    padding-left: 16%;
+    background-image: url("/img/theater2.JPG");
+    background-repeat: no-repeat;
+    background-size: 1970px 1170px;
+    }
+    
+    .date{
+    display: flex;
+    justify-content: center;
+    }
+    
+#boxoffice{text-align:center;border-radius: 15px; border: 3px solid #FFAD5B; padding: 0.5em 0.6em; color: #FF8000;}
+
+.both{
+	margin-top: 15%;
+}
+</style>
 
 <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+
             $(function() {
                 let y = new Date();
                 y.setDate(y.getDate()-1);
@@ -27,7 +49,7 @@
                      $.getJSON(url, function(data) {
                          let movieList = data.boxOfficeResult.dailyBoxOfficeList;
                          $("#boxoffice").empty();
-                         $("#boxoffice").append(d+" 박스 오피스 순위<br>");
+                         $("#boxoffice").append(d+" Today BOXOFFICE<br>");
                          for(let i in movieList){
                              $("#boxoffice").append("<div class='movie' id="+movieList[i].movieCd+">"+(parseInt(i)+1)+movieList[i].movieNm+"</a> / "+movieList[i].audiAcc+"명</div><hr>");
                              //console.log(movieList[i].movieCd);
@@ -48,14 +70,20 @@
                         d.append("<hr>");
                     })
                 })
+               
             });//ready
+           
         </script>
 
 </head>
 <body>
+<div class="both">
+<div id="boxoffice" >
+    BOXOFFICE<br>
+</div>
+<div class="date">
 <input type="date" id="date"><button id="mybtn">확인</button>
-<div id="boxoffice">
-    박스 오피스 순위<br>
+</div>
 </div>
 </body>
 </html>
