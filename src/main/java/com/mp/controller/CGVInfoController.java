@@ -1,12 +1,13 @@
 package com.mp.controller;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-import javax.lang.model.util.Elements;
-
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -14,15 +15,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
 import com.mp.model.CGVInfoDto;
 
 @Controller
+
 public class CGVInfoController {
 	private static Logger logger = LoggerFactory.getLogger(CGVInfoController.class);
 	
 	
 	@ResponseBody
 	@RequestMapping(value = "crawling.do", method = {RequestMethod.GET, RequestMethod.POST}, produces="text/plain;charset=UTF-8")
+
 	public String getCrawling() {
 		logger.info("크롤리잉" + new Date());
 		Document doc;

@@ -14,7 +14,7 @@
 
 <mapper namespace="CGVReserve">
 	<resultMap id="CGVReserveDto"
-		type="bit.com.a.model.CGVReserveDto">
+		type="com.mp.model.CGVReserveDto">
 		<id column="RESERVE_SEQ" property="reserveSequence" />
 		<result column="ID" property="id" />
 		<result column="TITLE" property="title" />
@@ -29,7 +29,7 @@
 		<!-- <association javaType="bit.com.a.model.CGVReserveDto" property="cgvPayDto"></association> -->
 	</resultMap>
 
-	<resultMap id="CGVPayDto" type="bit.com.a.model.CGVPayDto">
+	<resultMap id="CGVPayDto" type="com.mp.model.CGVPayDto">
 		<result column="ID" property="id" />
 		<result column="RESERVE_SEQ" property="reserveSequence" />
 		<result column="PAY_DATE" property="payDate" />
@@ -37,7 +37,7 @@
 	</resultMap>
 
 	<select id="selectMapping"
-		parameterType="bit.com.a.model.CGVReserveDto"
+		parameterType="com.mp.model.CGVReserveDto"
 		resultMap="CGVReserveDto">
 		SELECT A.ID, A.RESERVE_SEQ, A.TITLE, A.RUNNING_TIME,
 		A.MOVIE_AGE, A.MOVIE_DATE, A.RESERVE_DATE, A.TICKET_NUMBER, A.SELECTED_SEAT,
@@ -49,7 +49,7 @@
 
 
 	<insert id="CGVReserve"
-		parameterType="bit.com.a.model.CGVReserveDto" useGeneratedKeys="true" keyColumn="reserveSequence">
+		parameterType="com.mp.model.CGVReserveDto" useGeneratedKeys="true" keyColumn="reserveSequence">
 		
 		<selectKey keyProperty="reserveSequence" resultType="int"
 			order="BEFORE">
@@ -67,8 +67,8 @@
 	</insert>
 
 	<select id="getCGVReserveList"
-		parameterType="bit.com.a.model.CGVReserveDto"
-		resultType="bit.com.a.model.CGVReserveDto" >
+		parameterType="com.mp.model.CGVReserveDto"
+		resultType="com.mp.model.CGVReserveDto" >
 		
 		SELECT ID, RESERVE_SEQ as reserveSequence, TITLE, RUNNING_TIME,
 		MOVIE_AGE, MOVIE_DATE, RESERVE_DATE, TICKET_NUMBER, SELECTED_SEAT,
@@ -78,8 +78,8 @@
 	</select>
 
 	<select id="getCGVReserve"
-		parameterType="bit.com.a.model.CGVReserveDto"
-		resultType="bit.com.a.model.CGVReserveDto">
+		parameterType="com.mp.model.CGVReserveDto"
+		resultType="com.mp.model.CGVReserveDto">
 		SELECT ID, RESERVE_SEQ as reserveSequence, TITLE, RUNNING_TIME,
 		MOVIE_AGE, MOVIE_DATE, RESERVE_DATE, TICKET_NUMBER, SELECTED_SEAT,
 		SELECTED_THEATER

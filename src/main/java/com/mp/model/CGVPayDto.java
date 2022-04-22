@@ -1,5 +1,7 @@
 package com.mp.model;
 
+import java.io.Serializable;
+
 public class CGVPayDto implements Serializable {
 	private String id;
 	private int reserveSequence;

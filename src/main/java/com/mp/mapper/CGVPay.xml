@@ -14,11 +14,11 @@
   
   <mapper namespace="CGVPay">
   
-  <insert id="CGVPay" parameterType="bit.com.a.model.CGVPayDto">
+  <insert id="CGVPay" parameterType="com.mp.model.CGVPayDto">
   INSERT INTO  CGV_PAY(ID, RESERVE_SEQ, PAY_DATE, PAY_MONEY) VALUES(#{id}, #{reserveSequence}, SYSDATE, #{payMoney})
   </insert>
   
-  <select id="getCGVData" resultType="bit.com.a.model.CGVPayDto">
+  <select id="getCGVData" resultType="com.mp.model.CGVPayDto">
   SELECT ID, RESERVE_SEQ, PAY_DATE, PAY_MONEY FROM CGV_PAY WHERE ID = #{id}
   </select>
   

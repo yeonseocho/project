@@ -27,16 +27,16 @@
   SELECT ID FROM CGV_MEMBER WHERE ID = #{id}
   </select>
   
-  <insert id="register" parameterType="bit.com.a.model.CGVMemberDto">
+  <insert id="register" parameterType="com.mp.model.CGVMemberDto">
   	INSERT INTO CGV_MEMBER(ID, PASSWORD, NAME, PHONE_NUMBER, EMAIL, AUTH, REGISTER_DATE)
   	 VALUES(#{id}, #{password}, #{name}, #{phoneNumber}, #{email}, 3, SYSDATE) 
   	 
   </insert>
-  <select id="login" parameterType="bit.com.a.model.CGVMemberDto" resultType="bit.com.a.model.CGVMemberDto">
+  <select id="login" parameterType="com.mp.model.CGVMemberDto" resultType="com.mp.model.CGVMemberDto">
   SELECT ID, NAME, EMAIL, AUTH FROM CGV_MEMBER WHERE ID = #{id} and password = #{password}
   </select>
 
-<select id="getMemberInfo" parameterType="bit.com.a.model.CGVMemberDto" resultType="bit.com.a.model.CGVMemberDto">
+<select id="getMemberInfo" parameterType="com.mp.model.CGVMemberDto" resultType="com.mp.model.CGVMemberDto">
   SELECT ID, PASSWORD, NAME, PHONE_NUMBER, EMAIL,
    AUTH, REGISTER_DATE, UNREGISTER_DATE 
   FROM WHERE ID = #{id}

@@ -1,5 +1,11 @@
 package com.mp.dao;
 
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.mp.model.CGVMemberDto;
+
 @Repository
 public class CGVMemberDaoImpl implements CGVMemberDao {
 
@@ -23,7 +29,7 @@ public class CGVMemberDaoImpl implements CGVMemberDao {
 	}
 
 	@Override
-	public CGVMemberDto login(CGVMember Dto dto) {
+	public CGVMemberDto login(CGVMemberDto dto) {
 		CGVMemberDto cgvMemberDto = sqlSession.selectOne("login", dto);
 		return cgvMemberDto;
 	}

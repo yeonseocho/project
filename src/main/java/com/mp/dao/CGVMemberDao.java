@@ -1,8 +1,6 @@
 package com.mp.dao;
 
-
-
-import bit.com.a.model.CGVMemberDto;
+import com.mp.model.CGVMemberDto;
 
 public interface CGVMemberDao {
 	public boolean registerMember(CGVMemberDto dto);
