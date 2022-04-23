@@ -55,7 +55,7 @@ public class CGVInfoController {
 			 Elements movieOpenDates = doc.select(".txt-info strong");
 			/* logger.info("percents" + movieOpenDates); */
 			
-			 Elements likes = doc.select(".count strong>i");
+			// Elements likes = doc.select(".count strong>i");
 			/* logger.info("counts" + likes); */
 			 List<CGVInfoDto> list = new ArrayList<CGVInfoDto>();
 			 
@@ -67,9 +67,9 @@ public class CGVInfoController {
 				 String movieTitle = movieTitles.get(i).text();
 				 String movieRate = movieRates.get(i).text();
 				 String movieOpenDate = movieOpenDates.get(i).text();
-				 String like = likes.get(i).text();
+				// String like = likes.get(i).text();
 				 int seq = i;
-				 CGVInfoDto cgvInfoDto = new CGVInfoDto(rank, img, movieAge, movieTitle, movieRate, movieOpenDate, like, seq);
+				 CGVInfoDto cgvInfoDto = new CGVInfoDto(rank, img, movieAge, movieTitle, movieRate, movieOpenDate,null, seq);
 				 
 				 logger.info(cgvInfoDto.toString());
 				 list.add(cgvInfoDto);
