@@ -22,66 +22,65 @@ import com.mp.model.CGVInfoDto;
 
 public class CGVInfoController {
 	private static Logger logger = LoggerFactory.getLogger(CGVInfoController.class);
-	
-	
+
 	@ResponseBody
-	@RequestMapping(value = "crawling.do", method = {RequestMethod.GET, RequestMethod.POST}, produces="text/plain;charset=UTF-8")
+	@RequestMapping(value = "crawling.do", method = { RequestMethod.GET,
+			RequestMethod.POST }, produces = "text/plain;charset=UTF-8")
 
 	public String getCrawling() {
 		logger.info("크롤리잉" + new Date());
 		Document doc;
 		String gson = "";
-		
+
 		try {
-			
-			 doc = Jsoup.connect("http://www.cgv.co.kr/movies/").get();
+
+			doc = Jsoup.connect("http://www.cgv.co.kr/movies/").get();
 			/* Elements */
-			 Elements ranks = doc.select(".rank");
+			Elements ranks = doc.select(".rank");
 			/* logger.info("rank" + ranks); */
-			 
-			 Elements imgs = doc.select(".thumb-image > img");
+
+			Elements imgs = doc.select(".thumb-image > img");
 			/* logger.info("imgs" + imgs); */
-			 
-			 Elements movieAges = doc.select(".ico-grade");
+
+			Elements movieAges = doc.select(".ico-grade");
 			/* logger.info("ico-grade" + movieAges); */
-			 
-			 Elements movieTitles = doc.select("div.box-contents strong.title");
+
+			Elements movieTitles = doc.select("div.box-contents strong.title");
 			/* logger.info("titles" + movieTitles); */
-			 
-			 Elements movieRates = doc.select(".percent span");
+
+			Elements movieRates = doc.select(".percent span");
 			/* logger.info("percents" + movieRates); */
-			 
-			 
-			 Elements movieOpenDates = doc.select(".txt-info strong");
+
+			Elements movieOpenDates = doc.select(".txt-info strong");
 			/* logger.info("percents" + movieOpenDates); */
-			
+
 			// Elements likes = doc.select(".count strong>i");
 			/* logger.info("counts" + likes); */
-			 List<CGVInfoDto> list = new ArrayList<CGVInfoDto>();
-			 
-			 for(int i = 0; i < ranks.size(); i++) {
-				
-				 String rank = ranks.get(i).text();
-				 String img = imgs.get(i).attr("src");
-				 String movieAge = movieAges.get(i).text();
-				 String movieTitle = movieTitles.get(i).text();
-				 String movieRate = movieRates.get(i).text();
-				 String movieOpenDate = movieOpenDates.get(i).text();
+			List<CGVInfoDto> list = new ArrayList<CGVInfoDto>();
+
+			for (int i = 0; i < ranks.size(); i++) {
+
+				String rank = ranks.get(i).text();
+				String img = imgs.get(i).attr("src");
+				String movieAge = movieAges.get(i).text();
+				String movieTitle = movieTitles.get(i).text();
+				String movieRate = movieRates.get(i).text();
+				String movieOpenDate = movieOpenDates.get(i).text();
 				// String like = likes.get(i).text();
-				 int seq = i;
-				 CGVInfoDto cgvInfoDto = new CGVInfoDto(rank, img, movieAge, movieTitle, movieRate, movieOpenDate, null, seq);
-				 
-				 logger.info(cgvInfoDto.toString());
-				 list.add(cgvInfoDto);
-			 }
-			 	gson = new Gson().toJson(list);
-			 
+				int seq = i;
+				CGVInfoDto cgvInfoDto = new CGVInfoDto(rank, img, movieAge, movieTitle, movieRate, movieOpenDate, null,
+						seq);
+
+				logger.info(cgvInfoDto.toString());
+				list.add(cgvInfoDto);
+			}
+			gson = new Gson().toJson(list);
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+
 		return gson;
 	}
 }
