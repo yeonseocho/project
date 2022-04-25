@@ -129,7 +129,7 @@
 		</nav>
 	</div>
 	<div class="select-container">
-		<div class="select-wrapper">
+		<div class="select-wrapper">  
 			<div class="select-title">인원/좌석</div>
 			<div class="select-seat-container">
 				<div class="select-seat-number-container">
