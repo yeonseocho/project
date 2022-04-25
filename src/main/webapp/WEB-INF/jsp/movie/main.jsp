@@ -94,7 +94,7 @@
         <ul class="navbar-nav">
 
             <li class="nav-item">
-                <a class="nav-link" href="/moviein/moviess">박스 오피스 순위</a>
+                <a class="nav-link" href="/moveMain.do">박스 오피스 순위</a>
             </li>
 
             <li class="nav-item">

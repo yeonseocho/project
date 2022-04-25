@@ -71,7 +71,7 @@ public class CGVMemberDto implements Serializable{
 	public CGVMemberDto() {
 		// TODO Auto-generated constructor stub
 	}
-	public CGVMemberDto(String id, String password, String name, String phoneNumber, String email, String address,
+	public CGVMemberDto(String id,  String password, String name, String phoneNumber, String email, String address,
 			int auth, String registerDate, String unRegisterDate) {
 		super();
 		this.id = id;

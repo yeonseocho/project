@@ -26,14 +26,13 @@ public class CGVReserveController {
 	
 	@Autowired
 	CGVPayService cgvPayService;
-	
+
 	private static Logger logger = LoggerFactory.getLogger(CGVInfoController.class);
 	@RequestMapping(value="moveReserve.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public String moveReserve() {
 		logger.info("moveReserve");
 		return "reserve";
-	}
-	
+	} 
 	
 	@RequestMapping(value="moveSeat.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public String moveSeat(Model model, CGVReserveDto dto) {

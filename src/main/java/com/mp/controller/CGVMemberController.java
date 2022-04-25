@@ -32,7 +32,7 @@ public class CGVMemberController {
 	public String moveRegister() {
 		logger.info("moveRegister");
 		return "register";
-	}
+ 	}
 
 	@RequestMapping(value = "moveMain.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public String moveMain() {

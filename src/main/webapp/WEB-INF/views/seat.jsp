@@ -7,7 +7,7 @@
 <%
 	CGVMemberDto login = (CGVMemberDto) session.getAttribute("login");
 	if (login != null)
-		System.out.println(login.toString());
+	System.out.println(login.toString());
 	CGVReserveDto reserve = (CGVReserveDto) request.getAttribute("reserve");
 	/* if (reserve != null && reserve.getCgvPayDto() != null) {
 		System.out.println(reserve.toString());
@@ -35,7 +35,7 @@
 </head>
 
 <body>
-	<%
+<%
 		if (login == null) {
 	%>
 	<script>
@@ -95,7 +95,7 @@
 					}
 				%>
 			</div>
-		</header>
+		</header>  
 		<nav class="nav-wrapper">
 			<div class="logo-wrapper">
 				<a href="moveMain.do"><img class="cgvLogo"
