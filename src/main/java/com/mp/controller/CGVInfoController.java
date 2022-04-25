@@ -69,7 +69,7 @@ public class CGVInfoController {
 				 String movieOpenDate = movieOpenDates.get(i).text();
 				// String like = likes.get(i).text();
 				 int seq = i;
-				 CGVInfoDto cgvInfoDto = new CGVInfoDto(rank, img, movieAge, movieTitle, movieRate, movieOpenDate,null, seq);
+				 CGVInfoDto cgvInfoDto = new CGVInfoDto(rank, img, movieAge, movieTitle, movieRate, movieOpenDate, null, seq);
 				 
 				 logger.info(cgvInfoDto.toString());
 				 list.add(cgvInfoDto);
