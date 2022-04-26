@@ -12,6 +12,14 @@ if(login!= null) System.out.println(login.toString());
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+     #button{
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+</style>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header.css">
@@ -54,7 +62,7 @@ if(login!= null) System.out.println(login.toString());
                 <div class="movieLogo-wrapper"><img class="cgvMovie" src="./images/h2_movie.png"></div>
                 <div class="nav-inner">
                     <div><button>영화</button></div>
-                    <div><button>예매</button></div>
+                   <button type="button" onclick="location.href='/moveSeat.do' ">예매</button>
                     <div><button>극장</button></div>
                     <div><button>이벤트&컬쳐</button></div>
                     <div class="search-wrapper"><input><button class="searchButton">검색</button></div>
