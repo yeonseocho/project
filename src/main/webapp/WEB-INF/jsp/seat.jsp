@@ -35,16 +35,7 @@
 </head>
 
 <body>
-<%
-		if (login == null) {
-	%>
-	<script>
-		alert("로그인이 필요한 작업입니다 로그인을 진행해 주세요!")
-		location.href = "moveMain.do"
-	</script>
-	<%
-		}
-	%>
+
 	<div class="header-nav-wrapper">
 		<header class="header">
 			<div class="header-inner">
@@ -69,31 +60,21 @@
 			</div>
 			<div class="header-inner">
 
-				<%
-					if (login != null) {
-				%>
-				<div>
-					<button><%=login.getName()%>님 환영합니다
-					</button>
-				</div>
+				
 				<div>
 					<a href="moveMypage.do"><button>마이페이지</button></a>
 				</div>
 				<div>
 					<a href="logout.do"><button>로그아웃</button></a>
 				</div>
-				<%
-					} else {
-				%>
+				
 				<div>
 					<a href="moveLogin.do"><button>로그인</button></a>
 				</div>
 				<div>
 					<a href="moveRegister.do"><button>회원가입</button></a>
 				</div>
-				<%
-					}
-				%>
+				
 			</div>
 		</header>  
 		<nav class="nav-wrapper">
