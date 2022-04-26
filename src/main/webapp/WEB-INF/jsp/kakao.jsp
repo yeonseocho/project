@@ -21,7 +21,6 @@
 	}
 %>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +50,7 @@
             buyer_addr : '<%=address%>', 
            --%>  buyer_postcode : '123-456',
             //m_redirect_url : 'http://www.naver.com'
-        }, function(rsp) {
+        }, function(rsp) {`
             if ( rsp.success ) {
                 //[1] 서버단에서 결제정보 조회를 위해 jQuery ajax로 imp_uid 전달하기
                 jQuery.ajax({
@@ -67,7 +66,7 @@
                     if ( everythings_fine ) {
                         msg = '결제가 완료되었습니다.';
                         msg += '\n고유ID : ' + rsp.imp_uid;
-                        msg += '\n상점 거래ID : ' + rsp.merchant_uid;
+                         msg += '\n상점 거래ID : ' + rsp.merchant_uid;
                         msg += '\결제 금액 : ' + rsp.paid_amount;
                         msg += '카드 승인번호 : ' + rsp.apply_num;
                         

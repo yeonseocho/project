@@ -62,7 +62,7 @@ if(login!= null) System.out.println(login.toString());
                 <div class="movieLogo-wrapper"><img class="cgvMovie" src="./images/h2_movie.png"></div>
                 <div class="nav-inner">
                     <div><button>영화</button></div>
-                   <button type="button" onclick="location.href='/moveSeat.do' ">예매</button>
+                   <button type="button" onclick="location.href='/moveReserve.do' ">예매</button>
                     <div><button>극장</button></div>
                     <div><button>이벤트&컬쳐</button></div>
                     <div class="search-wrapper"><input><button class="searchButton">검색</button></div>

@@ -24,14 +24,14 @@ if(login!= null) System.out.println(login.toString());
 </head>
 
 <body>
- <%if(login == null){
-	%>
+ <%--if(login == null){
+	
 	<script>
 	alert("로그인이 필요한 작업입니다 로그인을 진행해 주세요!")
 	location.href="moveMain.do"
 	</script>
 	<%
-}%> 
+}
     <div class="header-nav-wrapper">
         <header class="header">
             <div class="header-inner">
@@ -56,7 +56,7 @@ if(login!= null) System.out.println(login.toString());
                 }
                 %> 
             </div>
-        </header>
+        </header>--%>
         <nav class="nav-wrapper">
             <div class="logo-wrapper"><a href="moveMain.do"><img class="cgvLogo" src="./images/cgv.png"></a></div>
             <div class="nav-content">
@@ -72,7 +72,7 @@ if(login!= null) System.out.println(login.toString());
             <div></div>
             <div></div>
         </nav>
-    </div>
+    <%--</div>  --%>
     <div class="reserve-container">
         <div class="movie-part">
             <div class="reserve-title">영화</div>
@@ -82,8 +82,8 @@ if(login!= null) System.out.println(login.toString());
             </div>
              <div class="movie-list-wrapper">
                 <div class="movie-list">
-                    <%-- <div class="movie-list-age">15</div>
-                    <div class="movie-list-title">1917</div> --%>
+                    <%--<div class="movie-list-age">15</div>
+                    <div class="movie-list-title">1917</div>  --%>
                 </div>
             </div>
         </div>
