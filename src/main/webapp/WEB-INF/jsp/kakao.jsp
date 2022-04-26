@@ -86,8 +86,7 @@
                 //실패시 이동할 페이지
               <%--   location.href="<%=request.getContextPath()%>/order/payFail"; --%>
                 alert(msg);
-                location.href="moveMain.do";h 
-                gkwl
+                location.href="moveMain.do";
             }
         });
         
