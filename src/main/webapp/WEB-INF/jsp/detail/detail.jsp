@@ -8,12 +8,33 @@
 <meta charset="utf-8">
 <title>영화 정보</title>
 <style>
-   h3 { width:fit-content; margin:1em auto;}
-   table {width:fit-content; border:1px solid black; border-spacing: 0; margin:0 auto; }
+   h3 { width:fit-content; margin:1em auto; font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.5em;
+  padding-bottom: 15px;
+  position: relative;}
+
+   table {border-collapse: collapse;
+  text-align: left;
+  line-height: 1.5;
+  border-top: 1px solid #ccc;
+  border-left: 3px solid #369;
+  margin : 20px 10px; }
    th,td { padding:5px; border-bottom:1px dashed black; }
-   th { border-right: 1px solid black; }
+   th { width: 147px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  color: #153d73;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;}
    th:first-child { width: 60px; }
-   td { width: 400px; }
+   td { width: 349px;
+  padding: 10px;
+  vertical-align: top;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;} 
    tr:last-child>th {border-bottom:none; }
    tr:last-child>td {border-bottom:none; }
    tr:nth-child(3) > td { height:70px; overflow: auto;}
@@ -75,7 +96,7 @@
 <body>
 <h3>영화 정보 보기</h3>
 <table>
-<tr><th>글번호</th><td>${detail.num}</td></tr>
+<%-- <tr><th>글번호</th><td>${detail.num}</td></tr>--%>
 <tr><th>영화 제 목</th><td>${detail.title}</td></tr>
 <tr><th>영화 감독</th><td>${detail.director}</td></tr>
 <tr><th>배우</th><td>${detail.actor}</td></tr>
