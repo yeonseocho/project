@@ -14,6 +14,7 @@
   line-height: 1.5em;
   padding-bottom: 15px;
   position: relative;}
+ body{ background-image:url("/img/back.JPG");}
 
    table {border-collapse: collapse;
   text-align: left;

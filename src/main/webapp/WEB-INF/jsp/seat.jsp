@@ -39,42 +39,12 @@
 	<div class="header-nav-wrapper">
 		<header class="header">
 			<div class="header-inner">
-				<div>
-					<button>
-						<i class="zmdi zmdi-apps"></i><span>&nbsp;CGV APP</span>
-					</button>
-				</div>
-				<div>
-					<button>
-						<i class="zmdi zmdi-facebook-box"></i><span>&nbsp;Like</span>
-					</button>
-				</div>
-				<div>
-					<button>
-						<i class="zmdi zmdi-instagram"></i><span>&nbsp;follow</span>
-					</button>
-				</div>
-				<div>
-					<button>알뜰한 영화 관람법</button>
-				</div>
+		
 			</div>
 			<div class="header-inner">
 
 				
-				<div>
-					<a href="moveMypage.do"><button>마이페이지</button></a>
-				</div>
-				<div>
-					<a href="logout.do"><button>로그아웃</button></a>
-				</div>
-				
-				<div>
-					<a href="moveLogin.do"><button>로그인</button></a>
-				</div>
-				<div>
-					<a href="moveRegister.do"><button>회원가입</button></a>
-				</div>
-				
+			
 			</div>
 		</header>  
 		<nav class="nav-wrapper">
@@ -87,22 +57,8 @@
 					<img class="cgvMovie" src="./images/h2_movie.png">
 				</div>
 				<div class="nav-inner">
-					<div>
-						<button>영화</button>
-					</div>
-					<div>
-						<button>예매</button>
-					</div>
-					<div>
-						<button>극장</button>
-					</div>
-					<div>
-						<button>이벤트&컬쳐</button>
-					</div>
-					<div class="search-wrapper">
-						<input>
-						<button class="searchButton">검색</button>
-					</div>
+					
+					
 				</div>
 			</div>
 			<div></div>

@@ -99,7 +99,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/bbs/list">리뷰</a>
+                <a class="nav-link" href="/moveReserve.do">예매하기</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/mb/login">로그인</a>
@@ -269,6 +269,7 @@
                 <div class="card-body">
                 
                     <h2>더 배트맨</h2>
+                    
             
             	</div>
             	 </a>
