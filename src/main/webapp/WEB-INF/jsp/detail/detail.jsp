@@ -20,7 +20,10 @@
   line-height: 1.5;
   border-top: 1px solid #ccc;
   border-left: 3px solid #369;
-  margin : 20px 10px; }
+  border-bottom: 1px solid #ccc;
+  margin : 20px 10px;
+   width:fit-content; margin:1em auto;
+ }
    th,td { padding:5px; border-bottom:1px dashed black; }
    th { width: 147px;
   padding: 10px;
@@ -29,7 +32,7 @@
   color: #153d73;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;}
-   th:first-child { width: 60px; }
+   th:first-child { width: 10%; }
    td { width: 349px;
   padding: 10px;
   vertical-align: top;
