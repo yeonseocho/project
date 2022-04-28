@@ -14,7 +14,9 @@
   line-height: 1.5em;
   padding-bottom: 15px;
   position: relative;}
- body{ background-image:url("/img/back.JPG");}
+ body{background-color:	#F5FFFA;
+    }
+    
 
    table {border-collapse: collapse;
   text-align: left;
@@ -128,7 +130,7 @@
 <p>
 <div id="btt">    
     <button type="button" onclick="del_board(${detail.num})">삭제</button>
-    <button type="button"><a href="/de/list">목록보기</a></button>
+    <button type="button"><a href="/movie/main">메인화면</a></button>
 </div>
 </body>
 </html>

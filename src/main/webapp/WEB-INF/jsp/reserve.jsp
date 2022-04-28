@@ -7,6 +7,10 @@
 CGVMemberDto login = (CGVMemberDto)session.getAttribute("login");
 if(login!= null) System.out.println(login.toString());
 %> 
+<style>
+#movieLogo-wrapper{width: 100px; /* 정렬하려는 요소의 넓이를 반드시 지정 */ margin: 0 auto;}
+
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,8 +62,7 @@ if(login!= null) System.out.println(login.toString());
             </div>
         </header>--%>
         <nav class="nav-wrapper">
-            <div class="logo-wrapper"><a href="moveMain.do"><img class="cgvLogo" src="./images/cgv.png"></a></div>
-            <div class="nav-content">
+       
                 <div class="movieLogo-wrapper"><img class="cgvMovie" src="./images/h2_movie.png"></div>
                 <div class="nav-inner">
              
